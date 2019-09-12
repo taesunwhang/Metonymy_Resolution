@@ -21,7 +21,7 @@ The dataset is publicly available in https://github.com/milangritta/Minimalist-L
 Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreNLP/index.html#download
 
 ### How to run the code
-1. Obtain the data files (.txt) and store them in `data/`. \
+- Obtain the data files (.txt) and store them in `data/`. \
 We exclude the mixed dataset since it accounts for only 2% of the datasets. \
   
   - SemEval
@@ -40,12 +40,12 @@ We exclude the mixed dataset since it accounts for only 2% of the datasets. \
     - `data/stanford-ner/stanford-ner-3.9.2.jar` 
     - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz` 
 
-2. Run `python3 data/data_utils.py`
+- Run `python3 data/data_utils.py`
 Pickle files are created for each dataset. 
 
-3. Run `python3 main.py --model=$model --data=$data`
-- $model = lstm, bilstm, elmo_bilstm, bert, xlnet, roberta
-- $data = semeval, relocar
+- Run `python3 main.py --model=$model --data=$data`
+  - $model = lstm, bilstm, elmo_bilstm, bert, xlnet, roberta
+  - $data = semeval, relocar
 
 ### Result
 1. Evaluation Results (**Accuracy**, Standard deviation)

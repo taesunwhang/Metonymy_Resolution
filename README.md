@@ -24,7 +24,7 @@ Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreN
 1. Obtain the data files (.txt) and store them in `data/`. \
 We exclude the mixed dataset since it accounts for only 2% of the datasets. \
   
-  - SemEval
+&nbsp;&nbsp;&nbsp;&nbsp;- SemEval
     - `data/semeval/semeval_literal_train.txt` 
     - `data/semeval/semeval_literal_test.txt` 
     - `data/semeval/semeval_metonymic_train.txt` 

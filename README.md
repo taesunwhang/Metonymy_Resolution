@@ -13,7 +13,7 @@ Metonymy Resolution (MR) based on Neural Approach
 
 ### Dataset
 1. SemEval 2007, ReLocaR
-The dataset is publicly available in https://github.com/milangritta/Minimalist-Location-Metonymy-Resolution
+The dataset is publicly available in https://github.com/milangritta/Minimalist-Location-Metonymy-Resolutio \
   \- Corpus Statistics of SemEval 2007 and ReLocaR
   <img src="/images/Metonymy_Resolution_Stats.png" width="50%">
 
@@ -28,13 +28,13 @@ We exclude the mixed dataset since it accounts for only 2% of the datasets. \
     - `data/semeval/semeval_literal_test.txt`
     - `data/semeval/semeval_metonymic_train.txt`
     - `data/semeval/semeval_metonymic_test.txt`
-  \
+  
   2\) ReLocaR
     - `data/relocar/relocar_literal_train.txt`
     - `data/relocar/relocar_literal_test.txt`
     - `data/relocar/relocar_metonymic_train.txt`
     - `data/relocar/relocar_metonymic_test.txt`
-  \
+  
   3\) stanford-ner
     - `data/stanford-ner/stanford-ner-3.9.2.jar`
     - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz`
@@ -47,9 +47,9 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
-  \- Evaluation Results (Accuracy, Standard deviation)
-  <img src="/images/Evaluation_Results_Acc.png" width="50%">
-  \- Evaluation Results (F1 Score)
-  <img src="/images/Evaluation_Results_F1.png" width="65%">
+\- Evaluation Results (Accuracy, Standard deviation)
+<img src="/images/Evaluation_Results_Acc.png" width="50%">
+\- Evaluation Results (F1 Score)
+<img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

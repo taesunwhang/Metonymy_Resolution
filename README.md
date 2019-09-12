@@ -13,10 +13,9 @@ Metonymy Resolution (MR) based on Neural Approach
 
 ### Dataset
 1. SemEval 2007, ReLocaR
-The dataset is publicly available in https://github.com/milangritta/Minimalist-Location-Metonymy-Resolutio \
-
-\- Corpus Statistics of SemEval 2007 and ReLocaR  
-<img src="/images/Metonymy_Resolution_Stats.png" width="50%">
+The dataset is publicly available in https://github.com/milangritta/Minimalist-Location-Metonymy-Resolution 
+  - Corpus Statistics of SemEval 2007 and ReLocaR  
+  <img src="/images/Metonymy_Resolution_Stats.png" width="50%">
 
 2. Stanford NER Tagger
 Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreNLP/index.html#download
@@ -24,19 +23,19 @@ Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreN
 ### How to run the code
 1. Obtain the data files (.txt) and store them in `data/`. 
 We exclude the mixed dataset since it accounts for only 2% of the datasets. \
-  1\) SemEval
+  1. SemEval
     - `data/semeval/semeval_literal_train.txt`
     - `data/semeval/semeval_literal_test.txt`
     - `data/semeval/semeval_metonymic_train.txt`
-    - `data/semeval/semeval_metonymic_test.txt` \
+    - `data/semeval/semeval_metonymic_test.txt`
   
-  2\) ReLocaR
+  2. ReLocaR
     - `data/relocar/relocar_literal_train.txt`
     - `data/relocar/relocar_literal_test.txt`
     - `data/relocar/relocar_metonymic_train.txt`
-    - `data/relocar/relocar_metonymic_test.txt` \
+    - `data/relocar/relocar_metonymic_test.txt`
   
-  3\) stanford-ner
+  3. stanford-ner
     - `data/stanford-ner/stanford-ner-3.9.2.jar`
     - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz`
 

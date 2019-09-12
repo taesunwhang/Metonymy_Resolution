@@ -51,7 +51,7 @@ We exclude the mixed dataset since it accounts for only 2% of the datasets. \
 ## Result
 1. Evaluation Results (**Accuracy**, Standard deviation)
 <img src="/images/Evaluation_Results_Acc.png" width="50%">
-2. Evaluation Results (**F1** Score)
+2. Evaluation Results (<b>F1</b> Score)
 <img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

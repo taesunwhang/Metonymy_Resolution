@@ -22,7 +22,7 @@ Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreN
 
 ### How to run the code
 1. Obtain the data files (.txt) and store them in `data/`. 
-We exclude the mixed dataset since it accounts for only 2% of the datasets. \
+We exclude the mixed dataset since it accounts for only 2% of the datasets.
   1. SemEval
     - `data/semeval/semeval_literal_train.txt`
     - `data/semeval/semeval_literal_test.txt`
@@ -47,9 +47,9 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
-- Evaluation Results (Accuracy, Standard deviation)
-<img src="/images/Evaluation_Results_Acc.png" width="50%"> \
-- Evaluation Results (F1 Score)
+1. Evaluation Results (Accuracy, Standard deviation)
+<img src="/images/Evaluation_Results_Acc.png" width="50%">
+2. Evaluation Results (F1 Score)
 <img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

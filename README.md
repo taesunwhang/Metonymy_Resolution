@@ -23,17 +23,20 @@ Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreN
 ### How to run the code
 1. Obtain the data files (.txt) and store them in `data/`. \
 We exclude the mixed dataset since it accounts for only 2% of the datasets. \
-  \* SemEval
+  
+  - SemEval
     - `data/semeval/semeval_literal_train.txt` 
     - `data/semeval/semeval_literal_test.txt` 
     - `data/semeval/semeval_metonymic_train.txt` 
     - `data/semeval/semeval_metonymic_test.txt`
-  \* ReLocaR
+    
+  - ReLocaR
     - `data/relocar/relocar_literal_train.txt` 
     - `data/relocar/relocar_literal_test.txt` 
     - `data/relocar/relocar_metonymic_train.txt` 
     - `data/relocar/relocar_metonymic_test.txt` 
-  \* stanford-ner
+    
+  - stanford-ner
     - `data/stanford-ner/stanford-ner-3.9.2.jar` 
     - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz` 
 
@@ -45,9 +48,9 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
-1. Evaluation Results (\*\*Accuracy\*\*, Standard deviation)
+1. Evaluation Results (**Accuracy**, Standard deviation)
 <img src="/images/Evaluation_Results_Acc.png" width="50%">
-2. Evaluation Results (\*\*F1\*\* Score)
+2. Evaluation Results (**F1** Score)
 <img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

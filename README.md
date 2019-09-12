@@ -21,23 +21,24 @@ The dataset is publicly available in https://github.com/milangritta/Minimalist-L
 Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreNLP/index.html#download
 
 ### How to run the code
-1. Obtain the data files (.txt) and store them in `data/`. 
+1. Obtain the data files (.txt) and store them in `data/`. \
 We exclude the mixed dataset since it accounts for only 2% of the datasets. \
+\
   1\) SemEval
-    - `data/semeval/semeval_literal_train.txt` \
-    - `data/semeval/semeval_literal_test.txt` \
-    - `data/semeval/semeval_metonymic_train.txt` \
-    - `data/semeval/semeval_metonymic_test.txt` \
-  
-  2\) ReLocaR
+    - `data/semeval/semeval_literal_train.txt` 
+    - `data/semeval/semeval_literal_test.txt` 
+    - `data/semeval/semeval_metonymic_train.txt` 
+    - `data/semeval/semeval_metonymic_test.txt` 
+ 
+  2\) ReLocaR \
     - `data/relocar/relocar_literal_train.txt` \
     - `data/relocar/relocar_literal_test.txt` \
     - `data/relocar/relocar_metonymic_train.txt` \
     - `data/relocar/relocar_metonymic_test.txt` \
   
-  3. stanford-ner
-    - `data/stanford-ner/stanford-ner-3.9.2.jar`
-    - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz`
+  3. stanford-ner \
+    - `data/stanford-ner/stanford-ner-3.9.2.jar` \
+    - `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz` \
 
 2. Run `python3 data/data_utils.py`
 Pickle files are created for each dataset. 

@@ -47,6 +47,7 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
+<img src="/images/Evaluation_Results_Acc.png" width="50%">
 ![Results Acc](/images/Evaluation_Results_Acc.png){: width="400" height="400"}
 ![Results F1](/images/Evaluation_Results_F1.png){: width="30%" height="30%"}
 

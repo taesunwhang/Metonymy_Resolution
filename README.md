@@ -48,6 +48,6 @@ Pickle files are created for each dataset.
 
 ### Result
 <img src="/images/Evaluation_Results_Acc.png" width="50%">
-<img src="/images/Evaluation_Results_F1.png" width="50%">
+<img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

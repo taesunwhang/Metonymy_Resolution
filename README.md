@@ -36,8 +36,8 @@ We exclude the mixed dataset since it accounts for only 2% of the datasets.
 - `data/relocar/relocar_metonymic_test.txt`
 
 3) stanford-ner
-- 'data/stanford-ner/stanford-ner-3.9.2.jar'
-- 'data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz'
+- `data/stanford-ner/stanford-ner-3.9.2.jar`
+- `data/stanford-ner/classifiers/english.all.3class.distsim.crf.ser.gz`
 
 2. Run `python3 data/data_utils.py`
 Pickle files are created for each dataset. 
@@ -47,7 +47,7 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
-![Results Acc](/images/Evaluation_Results_Acc.png)
-![Results Acc](/images/Evaluation_Results_F1.png)
+![Results Acc](/images/Evaluation_Results_Acc.png){: width="30%" height="30%"}
+![Results Acc](/images/Evaluation_Results_F1.png){: width="30%" height="30%"}
 
 

@@ -14,8 +14,9 @@ Metonymy Resolution (MR) based on Neural Approach
 ### Dataset
 1. SemEval 2007, ReLocaR
 The dataset is publicly available in https://github.com/milangritta/Minimalist-Location-Metonymy-Resolutio \
-  \- Corpus Statistics of SemEval 2007 and ReLocaR
-  <img src="/images/Metonymy_Resolution_Stats.png" width="50%">
+
+\- Corpus Statistics of SemEval 2007 and ReLocaR  
+<img src="/images/Metonymy_Resolution_Stats.png" width="50%">
 
 2. Stanford NER Tagger
 Stanford NER Tagger is publicly available in https://stanfordnlp.github.io/CoreNLP/index.html#download
@@ -47,9 +48,9 @@ Pickle files are created for each dataset.
 - $data = semeval, relocar
 
 ### Result
-\- Evaluation Results (Accuracy, Standard deviation)
+- Evaluation Results (Accuracy, Standard deviation)
 <img src="/images/Evaluation_Results_Acc.png" width="50%">
-\- Evaluation Results (F1 Score)
+- Evaluation Results (F1 Score)
 <img src="/images/Evaluation_Results_F1.png" width="65%">
 
 

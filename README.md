@@ -5,7 +5,7 @@ Metonymy Resolution (MR) based on Neural Approach
 - python 3.6.5 
 - torch 1.1.0 
 - allennlp 0.8.5
-- pickle
+- tqdm
 - numpy
 
 ## References

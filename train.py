@@ -1,5 +1,5 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import logging
 import pickle
 import math
@@ -10,6 +10,7 @@ import random
 
 import torch
 import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
 
 from sklearn.metrics import f1_score, classification_report
 from data_process import MetonymyProcessor
@@ -88,6 +89,8 @@ class MetonymyModel(object):
   def train(self):
 
     self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     self._build_data_process()
     self._build_model()
@@ -100,25 +103,11 @@ class MetonymyModel(object):
     self._logger.info("Start train model at %s" % start_time)
     max_eval_acc = 0
     max_eval_cls_report = None
+
+    self.tensorboard_writer = SummaryWriter()
     for epoch_completed in range(self.hparams.num_epochs):
       self.model.train()
       loss_sum, correct_preds_sum = 0, 0
-
-      if epoch_completed == 1:
-        self.processor.dataset_type = "semeval"
-        self.train_examples = self.processor.get_train_examples(self.hparams.data_dir)
-        train_data_len = int(math.ceil(len(self.train_examples) / self.hparams.train_batch_size))
-        self._logger.info("New Batch iteration per epoch is %d" % train_data_len)
-
-        if self.dataset_type == "semeval":
-          print("Weighted Cross Entropy Loss")
-          class_dist_dict = self.hparams.semeval_class_dist
-          print(class_dist_dict.items())
-          class_weights = [sum(class_dist_dict.values()) / class_dist_dict[key] for key in class_dist_dict.keys()]
-          # class_weights = [2 * max(class_weights), min(class_weights)]
-          print("class_weights", class_weights)
-
-          self.criterion = nn.CrossEntropyLoss(weight=torch.FloatTensor(class_weights).to(self.device))
 
       if epoch_completed > 0:
         self.train_examples = self.processor.get_train_examples(self.hparams.data_dir)
@@ -154,6 +143,7 @@ class MetonymyModel(object):
         correct_preds = torch.sum(torch.eq(predictions.unsqueeze(-1), labels[mod_entities].unsqueeze(-1)).int())
 
         loss = self.criterion(probs, labels[mod_entities])
+        self.optimizer.zero_grad()
         loss.backward()
         nn.utils.clip_grad_norm_(self.model.parameters(), self.hparams.max_gradient_norm)
         self.optimizer.step()
@@ -165,8 +155,14 @@ class MetonymyModel(object):
           .format(loss_sum / (batch_idx + 1))
         tqdm_batch_iterator.set_description(description)
 
+
+
       self._logger.info("-> Training loss = {:.4f}, accuracy: {:.4f}%\n"
             .format(loss_sum / train_data_len, (correct_preds_sum / len(self.train_examples))*100))
+
+      self.tensorboard_writer.add_scalar('train/loss', (loss_sum / train_data_len), epoch_completed)
+      self.tensorboard_writer.add_scalar('train/accuracy', (correct_preds_sum / len(self.train_examples)), epoch_completed)
+
       eval_cls_report, eval_acc = self._run_evaluate(epoch_completed)
 
       if eval_acc > max_eval_acc:
@@ -174,6 +170,7 @@ class MetonymyModel(object):
         max_eval_cls_report = eval_cls_report
 
     print(max_eval_cls_report)
+    self.tensorboard_writer.close()
 
   def _run_evaluate(self, epoch_completed):
     relocar_eval_data_len = int(math.ceil(len(self.relocar_test_examples) / self.hparams.eval_batch_size))
@@ -241,6 +238,10 @@ class MetonymyModel(object):
         print("{}->{} loss: {:.4f}, accuracy: {:.4f}%, f1_score : {:.4f}"
               .format(epoch_completed, key, (loss_sum / eval_dict[key][0]),
                       (correct_preds_sum / len(eval_dict[key][1]))*100, f1_score(total_labels, total_preds)))
+
+        self.tensorboard_writer.add_scalar('evaluation/loss', (loss_sum / eval_dict[key][0]), epoch_completed)
+        self.tensorboard_writer.add_scalar('evaluation/accuracy', (correct_preds_sum / len(eval_dict[key][1])), epoch_completed)
+
         self.scheduler.step((correct_preds_sum / len(eval_dict[key][1])))
 
       return classification_report(total_labels, total_preds, digits=3), (correct_preds_sum / len(eval_dict[key][1]))*100

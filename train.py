@@ -87,9 +87,6 @@ class MetonymyModel(object):
     return batch_inputs, batch_labels, batch_inputs_pos, batch_inputs_ner, batch_lengths, entities_idx
 
   def train(self):
-
-    self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     self._build_data_process()
